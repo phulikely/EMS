@@ -1,1 +1,24 @@
-<h1>This is registration page</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/style_registration.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  </head>
+  <body>
+    <div class="signup-form">
+      <form class="" action="index.html" method="post">
+        <h1>Registration</h1>
+        <input type="text" placeholder="First Name" class="txtb">
+        <input type="text" placeholder="Last Name" class="txtb">
+        <input type="email" placeholder="Email" class="txtb">
+        <input type="password" placeholder="Password" class="txtb">
+        <input type="password" placeholder="Re-Password" class="txtb">
+        <input type="submit" value="Create Account" class="signup-btn">
+        <a href="{% url 'login' %}">Already have one ?</a>
+      </form>
+    </div>
+  </body>
+</html>
