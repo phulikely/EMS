@@ -9,13 +9,14 @@
   </head>
   <body>
     <div class="signup-form">
-      <form class="" action="index.html" method="post">
+      <form class="" method="POST">
+        {% csrf_token %}
         <h1>Registration</h1>
-        <input type="text" placeholder="First Name" class="txtb">
-        <input type="text" placeholder="Last Name" class="txtb">
-        <input type="email" placeholder="Email" class="txtb">
-        <input type="password" placeholder="Password" class="txtb">
-        <input type="password" placeholder="Re-Password" class="txtb">
+        <input type="text" placeholder="First Name" class="txtb" name="fname" required>
+        <input type="text" placeholder="Last Name" class="txtb" name="lname" required>
+        <input type="email" placeholder="Email" class="txtb" name="email" required>
+        <input type="password" placeholder="Password" class="txtb" name="pwd" required>
+        <input type="password" placeholder="Re-Password" class="txtb" name="repwd" required>
         <input type="submit" value="Create Account" class="signup-btn">
         <a href="{% url 'login' %}">Already have one ?</a>
       </form>

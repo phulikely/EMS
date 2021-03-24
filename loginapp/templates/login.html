@@ -12,16 +12,18 @@
 <body>
   <div class="login-form">
     <div class="text">LOGIN</div>
-    <form>
+    <form method="POST" action="/welcome/">
+    {% csrf_token %}
       <div class="field">
         <div class="fas fa-envelope"></div>
-          <input type="text" placeholder="Email or Phone">
+          <input type="text" name="email" required="required" placeholder="Email or Phone">
         </div>
         <div class="field">
           <div class="fas fa-lock"></div>
-          <input type="password" placeholder="Password">
+          <input type="password" name="password" required="required" placeholder="Password">
         </div>
-        <button>LOGIN</button>
+        <center><label class = "text-danger">{{ msg }}</label></center>
+        <button type="submit">LOGIN</button>
         <div class="link">
           Not a member?
           <a href="{% url 'register'%}">Register</a>

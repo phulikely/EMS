@@ -10,8 +10,8 @@ body{
   text-align: center;
   align-items: center;
   justify-content: center;
-  /* background: #151515; */
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/static/images/galaxy3.jpg");
+  background: #0D1117;
+  /* background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/static/images/galaxy3.jpg"); */
   height: 100vh;
   -webkit-background-size: cover;
   background-size: cover;
