@@ -17,6 +17,7 @@
         <input type="email" placeholder="Email" class="txtb" name="email" required>
         <input type="password" placeholder="Password" class="txtb" name="pwd" required>
         <input type="password" placeholder="Re-Password" class="txtb" name="repwd" required>
+        <center><label class = "text-danger">{{ msg }}</label></center>
         <input type="submit" value="Create Account" class="signup-btn">
         <a href="{% url 'login' %}">Already have one ?</a>
       </form>

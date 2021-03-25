@@ -42,6 +42,9 @@ form .field{
   margin-top: 20px;
   display: flex;
 }
+.text-danger{
+  color: #ad0a0a;
+}
 .field .fas{
   height: 50px;
   width: 60px;
