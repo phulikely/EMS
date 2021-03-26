@@ -1,21 +1,22 @@
 from django.shortcuts import redirect, render, HttpResponseRedirect
 from .models import User
-import mysql.connector
-from operator import itemgetter
-from django.contrib import messages
-from django.contrib.auth.decorators import login_required
+
 
 def index(req):
     return render(req, 'index.html')
 
+
 def login(req):
     return render(req, 'login.html')
 
-def welcome(req):
+
+def project(req):
+    print('bbbbbb')
     if req.method == "POST":
         if User.objects.filter(email=req.POST['email'], password=req.POST['password']).exists():
+            print('aaaaaaaaaaaaaaaaaa')
             user = User.objects.get(email=req.POST['email'], password=req.POST['password'])
-            return render(req, 'welcome.html', {'user': user})
+            return render(req, 'project_index.html', {'user': user})
             #return redirect('welcome', {'user': user})
         else:
             context = {'msg': 'Invalid email or password!'}
