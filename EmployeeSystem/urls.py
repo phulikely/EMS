@@ -23,9 +23,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('login/', views.login, name='login'),
+    path('add_project/', views.add_project, name='add_project'),
+    path('add/', views.add, name='add'),
     path('registration/', views.registration, name='register'),
     #path('welcome/', views.welcome, name='welcome'),
     #path("project/", include("projects.urls")),
     path("project/", views.project, name="project_index"),
     path("<int:pk>/", vsd.project_detail, name="project_detail"),
+
 ]

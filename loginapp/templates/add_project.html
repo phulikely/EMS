@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Project</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style_add_project.css' %}">  
+</head>
+<form class="form-horizontal" method="POST" action="/add/">
+    {% csrf_token %}
+    <fieldset>
+    
+    <!-- Form Name -->
+    <legend>ADD NEW PROJECTS</legend>
+    
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="project_title">PROJECT TITLE</label>  
+      <div class="col-md-4">
+      <input id="project_title" name="project_title" placeholder="PROJECT TITLE" class="form-control input-md" required="" type="text">
+        
+      </div>
+    </div>
+    
+    <!-- Textarea -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="project_description">PROJECT DESCRIPTION</label>
+      <div class="col-md-4">                     
+        <textarea class="form-control" id="project_description" name="project_description" placeholder="PROJECT DESCRIPTION" required=""></textarea>
+      </div>
+    </div>
+    
+    <!-- Textarea -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="project_technology">PROJECT TECHNOLOGY</label>
+      <div class="col-md-4">                  
+        <textarea class="form-control" id="project_technology" name="project_technology" placeholder="PROJECT TECHNOLOGY" required=""></textarea>
+      </div>
+    </div>
+    
+    <!-- Textarea -->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="project_member">PROJECT MEMBER</label>
+        <div class="col-md-4">                  
+          <textarea class="form-control" id="project_member" name="project_member" placeholder="PROJECT MEMBER" required=""></textarea>
+        </div>
+      </div>
+        
+     <!-- File Button --> 
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="filebutton">IMAGE</label>
+      <div class="col-md-4">
+        <input id="btn_img" name="btn_img" class="input-file" type="file">
+      </div>
+    </div>
+    
+    <!-- Button -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="singlebutton"> </label>
+      <div class="col-md-4">
+        <!-- <button id="singlebutton" name="singlebutton" class="btn btn-primary" href="#">Add</button> -->
+        <input type="submit" value="Add" id="singlebutton" name="singlebutton" class="btn btn-primary">
+      </div>
+      </div>
+    
+    </fieldset>
+    </form>

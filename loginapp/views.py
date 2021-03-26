@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from .models import User
+from .models import User, Pro
 from projects.views import project_detail, project_index
 
 def index(req):
@@ -9,6 +9,23 @@ def index(req):
 def login(req):
     return render(req, 'login.html')
 
+
+def add_project(req):
+    return render(req, 'add_project.html')
+
+
+def add(req):
+    if req.method == "POST":
+        pro = Pro(title=req.POST['project_title'],
+                    description=req.POST['project_description'],
+                    technology=req.POST['project_technology'],
+                    member=req.POST['project_member'],
+                    #image=
+                    )
+        pro.save()
+        return redirect('login')
+    else:
+        return render(req, 'add_project.html')
 
 def project(req):
     if req.method == "POST":

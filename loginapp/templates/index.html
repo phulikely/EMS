@@ -19,12 +19,13 @@
 <li><a href="#">About</a></li>
 <li><a href="#">Services</a></li>
 <li><a href="#">Portfolio</a></li>
+<li><a href="{% url 'add_project' %}">Projects</a></li>
 <li><a href="#">Contact</a></li>
 </ul>
 </div>
 <div class="welcome-text">
     <h1>No Challenge <span>No Life</span></h1>
-    <a href="{% url 'login' %}">Start</a>
+    <a id="start" href="{% url 'login' %}">Start</a>
 </div>
 </header>
 

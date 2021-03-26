@@ -14,3 +14,15 @@ class User(models.Model):
 
     class Meta:
         db_table = "user"
+
+
+class Pro(models.Model):
+    id = models.AutoField(primary_key=True)
+    title = models.TextField()
+    description= models.TextField()
+    technology = models.TextField()
+    member = models.TextField()
+    image = models.ImageField(null=True, blank=True, upload_to='images/')
+
+    class Meta:
+        db_table = "add_project"    
