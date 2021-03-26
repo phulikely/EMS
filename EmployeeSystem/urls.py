@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from loginapp import views
+from projects import views as vsd
 
 
 urlpatterns = [
@@ -24,5 +25,6 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('registration/', views.registration, name='register'),
     #path('welcome/', views.welcome, name='welcome'),
-    path("project/", include("projects.urls")),
+    #path("project/", include("projects.urls")),
+    path("project/", views.project, name="project_index"),
 ]

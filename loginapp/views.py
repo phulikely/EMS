@@ -1,6 +1,6 @@
-from django.shortcuts import redirect, render, HttpResponseRedirect
+from django.shortcuts import redirect, render
 from .models import User
-
+from projects.views import project_detail, project_index
 
 def index(req):
     return render(req, 'index.html')
@@ -11,17 +11,14 @@ def login(req):
 
 
 def project(req):
-    print('bbbbbb')
     if req.method == "POST":
         if User.objects.filter(email=req.POST['email'], password=req.POST['password']).exists():
-            print('aaaaaaaaaaaaaaaaaa')
             user = User.objects.get(email=req.POST['email'], password=req.POST['password'])
-            return render(req, 'project_index.html', {'user': user})
-            #return redirect('welcome', {'user': user})
+            return project_index(req)
         else:
             context = {'msg': 'Invalid email or password!'}
             return render(req, 'login.html', context)
-            
+
 
 def registration(req):
     if req.method =="POST":
