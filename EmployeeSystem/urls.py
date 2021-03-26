@@ -27,4 +27,5 @@ urlpatterns = [
     #path('welcome/', views.welcome, name='welcome'),
     #path("project/", include("projects.urls")),
     path("project/", views.project, name="project_index"),
+    path("<int:pk>/", vsd.project_detail, name="project_detail"),
 ]
