@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from projects.models import Project
+from loginapp import views as loginView
 
 def project_index(req):
     projects = Project.objects.all()
@@ -15,3 +16,6 @@ def project_detail(req, pk):
         'project': project
     }
     return render(req, 'project_detail.html', context)
+
+def project_add(req):
+    loginView.add(req)

@@ -18,15 +18,12 @@ def add_project(req):
 
 
 def add(req):
+    print("req",req)
     if req.method == "POST" and req.FILES['btn_img']:
         myfile = req.FILES['btn_img']
         fs = FileSystemStorage()
-        print(myfile)
-
         filename = fs.save(myfile.name, myfile)
-        uploaded_file_url = fs.url(filename)
-
-
+        #uploaded_file_url = fs.url(filename)
         pro = Project(title=req.POST['project_title'],
                     description=req.POST['project_description'],
                     technology=req.POST['project_technology'],
@@ -34,7 +31,8 @@ def add(req):
                     image=f"img/{filename}",
                     )
         pro.save()
-        return redirect('login')
+        #return redirect('login')
+        return project_index(req)
     else:
         return render(req, 'add_project.html')
 
