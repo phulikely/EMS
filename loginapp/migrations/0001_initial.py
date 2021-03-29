@@ -18,8 +18,8 @@ class Migration(migrations.Migration):
                 ('fname', models.CharField(max_length=30)),
                 ('lname', models.CharField(max_length=30)),
                 ('email', models.EmailField(max_length=50)),
-                ('pwd', models.CharField(max_length=32)),
-                ('repwd', models.CharField(max_length=32)),
+                ('password', models.CharField(max_length=32)),
+                #('repwd', models.CharField(max_length=32, null=True)),
             ],
         ),
     ]
