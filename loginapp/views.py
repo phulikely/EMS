@@ -1,6 +1,9 @@
 from django.shortcuts import redirect, render
-from .models import User, Pro
+from .models import User
 from projects.views import project_detail, project_index
+from django.core.files.storage import FileSystemStorage
+from django.conf import settings
+from projects.models import Project
 
 def index(req):
     return render(req, 'index.html')
@@ -15,12 +18,20 @@ def add_project(req):
 
 
 def add(req):
-    if req.method == "POST":
-        pro = Pro(title=req.POST['project_title'],
+    if req.method == "POST" and req.FILES['btn_img']:
+        myfile = req.FILES['btn_img']
+        fs = FileSystemStorage()
+        print(myfile)
+
+        filename = fs.save(myfile.name, myfile)
+        uploaded_file_url = fs.url(filename)
+
+
+        pro = Project(title=req.POST['project_title'],
                     description=req.POST['project_description'],
                     technology=req.POST['project_technology'],
                     member=req.POST['project_member'],
-                    #image=
+                    image=f"img/{filename}",
                     )
         pro.save()
         return redirect('login')

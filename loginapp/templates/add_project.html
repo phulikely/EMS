@@ -9,7 +9,7 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/style_add_project.css' %}">  
 </head>
-<form class="form-horizontal" method="POST" action="/add/">
+<form class="form-horizontal" method="POST" action="/add/" enctype="multipart/form-data">
     {% csrf_token %}
     <fieldset>
     
